@@ -1,4 +1,4 @@
-__author__ = 'artem'
+__author__ = "bestblast"
 
 from BaseHTTPServer import HTTPServer
 import http_server
