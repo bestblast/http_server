@@ -29,19 +29,16 @@ class HttpProcessor(BaseHTTPRequestHandler):
         req_path = self.path
 
         if req_path == '/0-0-1':
-            print('You have ask 0-0-1')
-            resp1 = 'You have ask 0-0-1'
+            resp = req_path
         elif req_path == '/0-0-2':
-            print('You have ask 0-0-2')
-            resp1 = 'You have ask 0-0-2'
+            resp = req_path
         else:
-            print('Invalid path. Try')
-            resp1 = 'Invalid path. Try'
+            resp = 'Invalid path'
 
         # res = upper(hex(randint(268435456, 4294967295))[2:])
         timest = time.strftime(('%d.%m.%Y %H:%M:%S'))
-        resp1 = resp1 + " Time is: " + timest
-        self.wfile.write(resp1)
+        resp = resp + " Time is: " + timest
+        self.wfile.write(resp)
         self.wfile.write("\n")
 
 serv = HTTPServer((HOST, PORT), HttpProcessor)
